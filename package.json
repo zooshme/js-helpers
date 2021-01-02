@@ -1,0 +1,25 @@
+{
+  "name": "@zooshme/js-helpers",
+  "version": "1.0.0",
+  "description": "A library of JavaScript helper functions ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zooshme/js-helpers.git"
+  },
+  "keywords": [
+    "helper",
+    "function",
+    "method",
+    "JavaScript"
+  ],
+  "author": "Ovidiu Spatacian-Tarnu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zooshme/js-helpers/issues"
+  },
+  "homepage": "https://github.com/zooshme/js-helpers#readme"
+}
