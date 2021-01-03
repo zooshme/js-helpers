@@ -3,8 +3,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.ts$/,
-        use: "ts-loader",
+        test: /\.(js|ts)$/,
+        use: "babel-loader",
         exclude: /node_modules/,
       },
     ],
