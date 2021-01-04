@@ -1,12 +1,18 @@
 {
   "name": "@zooshme/js-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library of JavaScript helper functions ",
-  "main": "dist/bundle.min.js",
+  "main": "lib/index.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "scripts": {
     "test": "jest",
-    "build": "webpack --config webpack.prod.js",
-    "build:dev": "webpack --config webpack.dev.js"
+    "clean": "rm -rf dist lib",
+    "build": "npm run clean & webpack --config webpack.prod.js & webpack --config webpack.dev.js & tsc",
+    "build:prod": "npm run clean & webpack --config webpack.prod.js & tsc",
+    "build:dev": "npm run clean & webpack --config webpack.dev.js & tsc"
   },
   "repository": {
     "type": "git",
@@ -33,8 +39,10 @@
     "babel-loader": "^8.2.2",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
+    "shx": "^0.3.3",
     "terser-webpack-plugin": "^5.0.3",
     "ts-jest": "^26.4.4",
+    "ts-loader": "^8.0.13",
     "typescript": "^4.1.3",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1",
