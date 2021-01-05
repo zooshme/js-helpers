@@ -40,17 +40,17 @@ These are the methods that have been implemented in the library so far.
 
 ### Arrays
 
-    chunkArrayElements(arr: Array, groupLength: Number): Array
+    chunkArrayElements(arr: Array, chunkLength: Number): Array
 
 Given an array of length >= 0, and a positive integer N, return the contents of the array divided into arrays of N length.
 
 Where all arrays cannot be of N length, the final array will have a length equal to the remainder.
 
-    chungArrayElements([​1​, ​2​, ​3​, ​4,​ ​5​], ​3​); // [ [ 1, 2, 3 ], [ 4, 5 ] ]
+    chunkArrayElements([​1​, ​2​, ​3​, ​4,​ ​5​], ​3​); // [ [ 1, 2, 3 ], [ 4, 5 ] ]
 
 ---
 
-    groupArrayElements(arr: Array, groupLength: Number): Array
+    groupArrayElements(arr: Array, resultLength: Number): Array
 
 Given an array of length >= 0, and a positive integer N, return the contents of the array divided into N equally sized arrays.
 
