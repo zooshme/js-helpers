@@ -6,35 +6,33 @@ export function groupArrayElements(arr: any[], resultLength: number) {
   if (!Number.isInteger(resultLength) || resultLength < 1)
     throw "Result length must be a positive integer";
 
-  if (arrLength === 0) return [];
+  const result: any[] = [];
+  const multiples = Math.floor(arrLength / (resultLength - 1));
+  const remainder = arrLength % (resultLength - 1);
 
-  if (arrLength < resultLength)
-    throw "Array length must be equal or greater than result length";
+  let i = 0;
+  if (remainder > 0 && multiples > 0) {
+    // Generates equally sized arrays
+    for (i; i < resultLength - 1; i++) {
+      result.push(arr.slice(i * multiples, (i + 1) * multiples));
+    }
 
-  const multiples = Math.floor(arrLength / resultLength);
-  const remainder = arrLength % resultLength;
-  let chunkedArray, chunkSize, remainingElements;
+    // Generates final array
+    result.push(arr.slice(i * multiples));
+  } else if (remainder === 0 && multiples > 1) {
+    // Generates equally sized arrays
+    for (i; i < resultLength - 1; i++) {
+      result.push(arr.slice(i * (multiples - 1), (i + 1) * (multiples - 1)));
+    }
 
-  if (remainder === 0) {
-    chunkedArray = arr;
-    chunkSize = multiples;
-  } else if (resultLength - remainder === 1) {
-    chunkedArray = arr;
-    chunkSize = multiples + 1;
-    return chunkArrayElements(arr, multiples + 1);
+    // Generates final array
+    result.push(arr.slice(i * (multiples - 1)));
   } else {
-    chunkedArray = arr.slice(0, -remainder);
-    chunkSize = multiples;
-    remainingElements = arr.slice(-remainder);
-  }
 
-  const result = chunkArrayElements(chunkedArray, chunkSize);
-
-  if (remainingElements) {
-    result[resultLength - 1] = [
-      ...result[resultLength - 1],
-      ...remainingElements,
-    ];
+    // Generates arrays with 1 element
+    for (i; i < arrLength; i++) {
+      result.push(arr.slice(i, i + 1));
+    }
   }
 
   return result;
