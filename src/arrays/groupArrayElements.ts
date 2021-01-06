@@ -1,5 +1,3 @@
-import { chunkArrayElements } from "./chunkArrayElements";
-
 export function groupArrayElements(arr: any[], resultLength: number) {
   const arrLength = arr.length;
 
