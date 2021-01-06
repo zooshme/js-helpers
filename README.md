@@ -56,6 +56,10 @@ Given an array of length >= 0, and a positive integer N, return the contents of 
 
 Where the size of the original array cannot be divided equally by N, the final part will have a length equal to the remainder.
 
+It return an empty array if the original array is empty.
+
+It returns an array with one element arrays if the original array length is less than the result length parameter.
+
     groupArrayElements([​1​, ​2​, ​3​, ​4,​ ​5​], ​3​); // [ [ 1, 2 ], [ 3, 4 ], [ 5 ] ]
 
 ---

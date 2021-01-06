@@ -1,6 +1,6 @@
 {
   "name": "@zooshme/js-helpers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library of JavaScript helper functions ",
   "main": "lib/index.js",
   "files": [
@@ -10,9 +10,9 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -rf dist lib",
-    "build": "npm run clean & webpack --config webpack.prod.js & webpack --config webpack.dev.js & tsc",
-    "build:prod": "npm run clean & webpack --config webpack.prod.js & tsc",
-    "build:dev": "npm run clean & webpack --config webpack.dev.js & tsc"
+    "build": "npm run clean & webpack --config webpack.prod.js & webpack --config webpack.dev.js & tsc --project tsconfig.cmd.json",
+    "build:prod": "npm run clean & webpack --config webpack.prod.js & tsc --project tsconfig.cmd.json",
+    "build:dev": "npm run clean & webpack --config webpack.dev.js & tsc --project tsconfig.cmd.json"
   },
   "repository": {
     "type": "git",
