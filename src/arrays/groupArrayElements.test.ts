@@ -26,7 +26,7 @@ describe("groupArrayElements", () => {
   });
 
   it("returns a result containing arrays of the same element and one array with remainder elements", () => {
-    const arr = [1, 2, 3, 4, 5, 6,7, 8, 9, 10];
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const resultLength = 7;
     const result = groupArrayElements(arr, resultLength);
     const expectedResult = [[1], [2], [3], [4], [5], [6], [7, 8, 9, 10]];
@@ -44,14 +44,13 @@ describe("groupArrayElements", () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it("throws an error if array length is less than the second parameter", () => {
-    const arr: any[] = [1, 2];
-    const resultLength = 3;
-    const errorMessage = "Array length must be equal or greater than result length";
+  it("returns an array with one element array when result length parameter is greater than the original array length", () => {
+    const arr = [1, 2, 3, 4, 5];
+    const resultLength = 6;
+    const result = groupArrayElements(arr, resultLength);
+    const expectedResult: any[] = [[1], [2], [3], [4], [5]];
 
-    expect(() => {
-      groupArrayElements(arr, resultLength);
-    }).toThrow(errorMessage);
+    expect(result).toEqual(expectedResult);
   });
 
   it("throws an error if result length is not an integer", () => {
